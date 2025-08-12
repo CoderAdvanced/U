@@ -16,7 +16,7 @@ if(localStorage.getItem("tabCloakTitle") || localStorage.getItem("tabCloakIcon")
     cancelBtn.style.display = "inline";
 }
 
-if(localStorage.getItem("ab_cloak") == "true" && window.top.location.href != "about:blank"){
+if(localStorage.getItem("ab_cloak") == "true"){
     openBlank.style.display = "block";
 }
 
@@ -139,7 +139,7 @@ for(var i=0;i<allSettings.length;i++){
         document.querySelector("#" + this.id + " + label + p").classList.add("appear");
 
         if(this.id == "ab_cloak"){
-            if(localStorage.getItem(this.id) == "true" && window.top.location.href != "about:blank"){
+            if(localStorage.getItem(this.id) == "true"){
                 openBlank.style.display = "block";
             } else {
                 openBlank.style.display = "none";
