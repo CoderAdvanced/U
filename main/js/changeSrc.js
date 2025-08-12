@@ -13,10 +13,9 @@ function usingFirefox(){
 var redirectSite = "https://www.google.com";
 
 function openBackup(){
-    var encoded_url = window.location.origin;
-    var w = open('about:blank', '_blank') || alert("It seems like you are blocking pop-ups. Please try again once you have allowed pop-ups.")
-      w.document.write(`<iframe style="height: 100%; width: 100%; border: none;" src="${encoded_url}" allowfullscreen></iframe>`)
-      w.document.body.style.margin = '0'
+  var tab = window.open('about:blank', '_blank');
+  tab.document.documentElement.innerHTML = '<!DOCTYPE html><html><head><title>' + /*(localStorage.getItem("tabCloakTitle") ? localStorage.getItem("tabCloakTitle") : "Utopia")*/'Utopia' + '</title><link rel="icon" type="image/png" href="' + /*(localStorage.getItem("tabCloakIcon") ? localStorage.getItem("tabCloakIcon") : window.location.origin + "/favicon.ico")*/window.location.origin + "/favicon.ico" + '"><style>body {margin:0;overflow:hidden}</style></head><body><iframe width="100%" height="100%" src="' + window.location.origin + frameUrl + '" frameborder="0"></iframe></body></html>';
+  tab.document.close();
   
   window.location.replace(redirectSite);
 }
@@ -43,5 +42,4 @@ if( window.location.pathname == "/"){
     }
   }
 }
-
 
