@@ -147,7 +147,7 @@ for(var i=0;i<allSettings.length;i++){
         }
 
         if(this.id == "auto_cloak"){
-            if(localStorage.getItem(this.id) == "true" && window.top.location.href != "about:blank"){
+            if(localStorage.getItem(this.id) == "true"){
                 var encoded_url = window.location.origin;
                 var w = open('about:blank', '_blank') || alert("It seems like you are blocking pop-ups. Please try again once you have allowed pop-ups.")
                 w.document.write(`<iframe style="height: 100%; width: 100%; border: none;" src="${encoded_url}" allowfullscreen></iframe>`)
