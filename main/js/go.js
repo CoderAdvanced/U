@@ -17,7 +17,7 @@ function decodeUrl(str){
   return decodeURIComponent(input).split('').map((char, ind) => ind % 2 ? String.fromCharCode(char.charCodeAt(0) ^ 2) : char).join('') + (search.length ? '?' + search.join('?') : '');
 }
 
-if(/*localStorage.getItem("ab_cloak") == "true" && window.top.location.href != "about:blank"*/) {
+if(/*localStorage.getItem("ab_cloak") == "true" && */window.top.location.href != "about:blank") {
   //document.getElementById("blank").style.display = "inline-block";
 } else {
   //document.getElementById("disc").style.marginTop = "-30px";
